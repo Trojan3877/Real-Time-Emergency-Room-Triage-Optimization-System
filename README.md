@@ -1,4 +1,5 @@
 # Real-Time Emergency Room Triage Optimization System 🚑
+
 [![Build Status](https://github.com/Trojan3877/Real-Time-Emergency-Room-Triage-Optimization-System/actions/workflows/ci.yml/badge.svg)](https://github.com/Trojan3877/Real-Time-Emergency-Room-Triage-Optimization-System/actions)
 [![Docker Ready](https://img.shields.io/badge/docker-ready-blue.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -8,6 +9,45 @@
 [![Python](https://img.shields.io/badge/python-3.11-blue?logo=python)]()
 [![Kubernetes](https://img.shields.io/badge/kubernetes-ready-blue?logo=kubernetes)]()
 [![Snowflake](https://img.shields.io/badge/snowflake-integrated-blue?logo=snowflake)]()
+
+---
+
+## ✨ Extended Description
+
+The Real-Time Emergency Room Triage Optimization System is an advanced machine learning and cloud-powered application designed to revolutionize patient flow and triage operations in hospital emergency departments. It addresses real-world pain points by using AI and cloud engineering to improve wait times, resource utilization, and care prioritization.
+
+**Key Features:**
+- **Automated, real-time patient risk assessment and triage level prediction**
+- **FastAPI microservice API for rapid integration with EHR and medical IoT**
+- **Streamlit dashboard for live demo and explainability**
+- **Cloud-native, Docker/Kubernetes/Snowflake-ready deployment**
+- **DevOps automation via Ansible, Terraform, and GitHub Actions**
+- **Extensive documentation and reproducible results**
+
+---
+
+## 🏗️ Architecture
+
+![System Architecture](docs/architecture.png)
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repo
+git clone https://github.com/Trojan3877/Real-Time-Emergency-Room-Triage-Optimization-System.git
+cd Real-Time-Emergency-Room-Triage-Optimization-System
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Train the model
+python train_model.py
+
+# Run API server (FastAPI)
+uvicorn app:app --reload
+
 
 
 
