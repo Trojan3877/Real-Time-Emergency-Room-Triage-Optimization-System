@@ -1,4 +1,6 @@
 # Real-Time Emergency Room Triage Optimization System 🚑
+## 🔄 Pipeline Flowchart
+![Pipeline Flowchart](docs/flowchart.png)
 
 [![Build Status](https://github.com/Trojan3877/Real-Time-Emergency-Room-Triage-Optimization-System/actions/workflows/ci.yml/badge.svg)](https://github.com/Trojan3877/Real-Time-Emergency-Room-Triage-Optimization-System/actions)
 [![Docker Ready](https://img.shields.io/badge/docker-ready-blue.svg)]()
