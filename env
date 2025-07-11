@@ -1,0 +1,5 @@
+# .env
+MODEL_PATH=ml_model/triage_model.pkl
+DATABASE_PATH=database/patient_records_sample.csv
+API_KEY=your-secure-api-key
+LOG_LEVEL=INFO
