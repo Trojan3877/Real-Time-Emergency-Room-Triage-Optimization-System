@@ -1,0 +1,42 @@
+# k8s_deployment.yaml
+# Kubernetes configuration for MediTriageAI application
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meditriage-deployment
+  labels:
+    app: meditriage
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: meditriage
+  template:
+    metadata:
+      labels:
+        app: meditriage
+    spec:
+      containers:
+      - name: meditriage-container
+        image: yourdockerhubusername/meditriage-ai:latest
+        ports:
+        - containerPort: 8501
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: meditriage-service
+spec:
+  selector:
+    app: meditriage
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8501
+  type: LoadBalancer
