@@ -1,0 +1,36 @@
+---
+- name: Provision MediTriage AI Server
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update apt and install dependencies
+      apt:
+        update_cache: yes
+        name:
+          - python3
+          - python3-pip
+          - openjdk-17-jdk
+          - docker.io
+          - git
+        state: present
+
+    - name: Clone MediTriageAI repository
+      git:
+        repo: https://github.com/Trojan3877/Real-Time-Emergency-Room-Triage-Optimization-System.git
+        dest: /opt/MediTriageAI
+        version: main
+
+    - name: Install Python requirements
+      pip:
+        requirements: /opt/MediTriageAI/requirements.txt
+
+    - name: Build and run Docker container
+      docker_container:
+        name: meditriage
+        image: meditriage-image
+        build:
+          path: /opt/MediTriageAI
+        state: started
+        ports:
+          - "8501:8501"
