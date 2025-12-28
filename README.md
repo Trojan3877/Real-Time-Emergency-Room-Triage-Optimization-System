@@ -51,10 +51,6 @@ python train_model.py
 uvicorn app:app --reload
 
 
-
-
----
-
 ## 📊 Project Overview
 
 This project leverages **Machine Learning and modern software engineering** to reduce patient wait times in crowded ERs. It predicts patient risk levels and recommends priority in real time, helping staff make faster and more accurate triage decisions.
@@ -65,7 +61,6 @@ This project leverages **Machine Learning and modern software engineering** to r
 - Snowflake, Docker, Ansible, Kubernetes  
 - GitHub Actions CI/CD
 
----
 
 ## 🏗️ Architecture
 
@@ -81,7 +76,7 @@ This project leverages **Machine Learning and modern software engineering** to r
     ├── confusion_matrix.png        # Visual confusion matrix
     ├── feature_importance.png      # (Optional) Model explainability chart
 
-## 📈 Model Metrics
+📈 Model Metrics
 
 All model evaluation results, including accuracy, F1-score, confusion matrix, and feature importance, are in [`/metrics/evaluation_report.md`](metrics/evaluation_report.md).
 
@@ -92,7 +87,6 @@ All model evaluation results, including accuracy, F1-score, confusion matrix, an
 
 [See full metrics & visuals →](metrics/evaluation_report.md)
 
----
 
 ## 🚀 Quick Start
 
@@ -123,7 +117,6 @@ uvicorn api.FastAPI_app:app --reload
 
 MediTriage AI is a capstone-ready, production-grade machine learning project designed to **reduce ER wait times** by predicting patient triage priority using structured inputs such as vitals, symptoms, and history. Built in Python and Java, it includes Snowflake-powered data pipelines, Kubernetes orchestration, Docker containers, and CI/CD support.
 
----
 
 ## 🚀 Project Goals
 
@@ -132,7 +125,25 @@ MediTriage AI is a capstone-ready, production-grade machine learning project des
 - 🧠 **Deliver predictive insights** from historical ER data
 - 📊 **Visualize triage flow** through a web dashboard (Streamlit)
 
----
+Design Questions & Reflections
+
+Q: What problem does this project aim to solve?
+A: This project aims to explore how a real-time system can support faster, more efficient emergency room triage by processing inputs and prioritizing cases based on predictive signals. The goal was not just to build a model, but to integrate it into a workflow that reflects time-sensitive, decision-critical environments.
+
+Q: Why did I choose this architecture and approach instead of a simpler prototype?
+A: I chose to build a structured pipeline with modular components for data input, preprocessing, triage prediction, and output because emergency settings require clarity, traceability, and the ability to adjust or debug individual stages. A one-off prototype wouldn’t show how these stages interact or how the system could be extended.
+
+Q: What were the main trade-offs I made?
+A: The main trade-off was between rapid prototyping and robustness. Rapid prototyping might have given quick proof of concept, but a modular design gave me clearer boundaries and the ability to reason about failure modes and system behavior under load. This meant more upfront design effort.
+
+Q: What didn’t work as expected?
+A: Early versions struggled with aligning prediction latency and real-time responsiveness — some components were too slow when tested with larger batches. This highlighted how performance constraints have to be considered early, especially in time-critical systems.
+
+Q: What did I learn from building this project?
+A: I learned that real-time decision systems require careful thought about performance, data throughput, and how predictions interact with human workflows. I also gained experience structuring pipelines that can be tested and improved in stages rather than all at once.
+
+Q: If I had more time or resources, what would I improve next?
+A: I would add monitoring and performance dashboards so that we could see how the system behaves over time under different loads, and I’d build more robust evaluation tests to assess prediction quality in edge cases. I’d also explore uncertainty estimation so the system could say when it’s unsure rather than overconfident.
 
 ## ⚙️ Tech Stack
 
