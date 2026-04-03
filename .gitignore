@@ -3,6 +3,13 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Generated model artifacts (run train_model.py to regenerate)
+ml_model/triage_model.pkl
+
+# Generated evaluation outputs
+metrics/confusion_matrix.png
+metrics/feature_importance.png
+
 # C extensions
 *.so
 

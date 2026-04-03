@@ -21,8 +21,8 @@ from sklearn.metrics import (
 from sklearn.model_selection import train_test_split
 
 # Load data and model
-data = pd.read_csv("../database/patient_records_sample.csv")
-model = joblib.load("../ml_model/triage_model.pkl")
+data = pd.read_csv("database/patient_records_sample.csv")
+model = joblib.load("ml_model/triage_model.pkl")
 
 # Features/target split
 X = data.drop(columns=['priority_level'])
@@ -47,13 +47,14 @@ print(f"F1 Score: {f1:.4f}")
 
 # Confusion matrix
 cm = confusion_matrix(y_test, y_pred)
+labels = sorted(y_test.unique())
 plt.figure(figsize=(6, 5))
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=[1,2,3], yticklabels=[1,2,3])
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=labels, yticklabels=labels)
 plt.title("Confusion Matrix")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.tight_layout()
-plt.savefig("../metrics/confusion_matrix.png")
+plt.savefig("metrics/confusion_matrix.png")
 plt.close()
 
-print("Confusion matrix saved to ../metrics/confusion_matrix.png")
+print("Confusion matrix saved to metrics/confusion_matrix.png")

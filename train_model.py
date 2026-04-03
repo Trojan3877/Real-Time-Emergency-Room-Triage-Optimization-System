@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
 # Load and preprocess data
-data = pd.read_csv("../database/patient_records_sample.csv")
+data = pd.read_csv("database/patient_records_sample.csv")
 
 # Basic preprocessing (assumes columns like 'age', 'bp', 'hr', 'symptom_code', 'priority_level')
 X = data.drop(columns=['priority_level'])  # Features
@@ -32,5 +32,5 @@ print("Classification Report:")
 print(classification_report(y_test, y_pred))
 
 # Save the model
-joblib.dump(model, "../ml_model/triage_model.pkl")
-print("Model saved to ../ml_model/triage_model.pkl")
+joblib.dump(model, "ml_model/triage_model.pkl")
+print("Model saved to ml_model/triage_model.pkl")
