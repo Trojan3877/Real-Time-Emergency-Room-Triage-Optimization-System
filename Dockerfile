@@ -21,4 +21,4 @@ COPY . .
 EXPOSE 8501
 
 # Default command to run model training
-CMD ["python", "ml_model/train_model.py"]
+CMD ["python", "train_model.py"]
