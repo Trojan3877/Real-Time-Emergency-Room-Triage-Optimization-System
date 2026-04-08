@@ -5,12 +5,16 @@ Trains a machine learning classifier to predict ER triage priority based on pati
 Uses scikit-learn with a RandomForestClassifier. Outputs the model and training metrics.
 """
 
+import os
 import pandas as pd
 import numpy as np
 import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
+
+# Ensure output directory exists
+os.makedirs("ml_model", exist_ok=True)
 
 # Load and preprocess data
 data = pd.read_csv("database/patient_records_sample.csv")

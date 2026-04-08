@@ -5,6 +5,7 @@ Evaluates the saved triage prediction model on a test dataset.
 Generates precision, recall, AUC, and confusion matrix.
 """
 
+import os
 import pandas as pd
 import numpy as np
 import joblib
@@ -44,6 +45,9 @@ print(f"Accuracy: {acc:.4f}")
 print(f"Precision: {prec:.4f}")
 print(f"Recall: {rec:.4f}")
 print(f"F1 Score: {f1:.4f}")
+
+# Ensure output directory exists
+os.makedirs("metrics", exist_ok=True)
 
 # Confusion matrix
 cm = confusion_matrix(y_test, y_pred)
