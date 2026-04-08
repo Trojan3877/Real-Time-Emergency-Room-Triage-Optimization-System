@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: meditriage-container
-        image: yourdockerhubusername/meditriage-ai:latest
+        image: trojan3877/meditriage-ai:latest
         ports:
         - containerPort: 8501
         env:

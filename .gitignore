@@ -1,3 +1,9 @@
+# Archive files
+*.zip
+
+# Root env file (use .env.example as template instead)
+/env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

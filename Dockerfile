@@ -17,8 +17,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy entire application code
 COPY . .
 
-# Expose Streamlit app port (optional UI)
+# Make entrypoint script executable
+RUN chmod +x entrypoint.sh
+
+# Expose Streamlit app port
 EXPOSE 8501
 
-# Default command to run model training
-CMD ["python", "train_model.py"]
+# Train model on first run (if absent) then launch the Streamlit UI
+ENTRYPOINT ["./entrypoint.sh"]
